@@ -1,0 +1,16 @@
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <h1>Kittybase</h1>
+
+  <p>
+    Welcome to Kittybase!!
+  </p>
+
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>
