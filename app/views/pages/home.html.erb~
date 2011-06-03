@@ -4,4 +4,3 @@
     This is the home page for Kittybase.
   </p>
 
-<%= link_to "Sign up now!", '/signup', :class => "signup_button round" %>
