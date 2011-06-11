@@ -7,6 +7,19 @@ describe UsersController do
       get 'new'
       response.should be_success
     end
+    
+      it "should have the right title" do
+get 'new'
+x =  response.should have_selector("title", :content => "Sign up")
+y =  response.should have_selector("h1", :content => "Sign up")
+puts x.class
+puts x
+puts y.class
+puts y
+response.should have_selector("title", :content => "Sign up")
+end
   end
+
+
 
 end
