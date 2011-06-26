@@ -2,10 +2,23 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
-
+    
   end
   
-    def new
+  def new
+    @user = User.new
     @title = "Sign up"
   end
+  
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to @user
+      flash[:success] = "Welcome to KittyBase!  Your account has been created successfully.  Now add a kitty!"
+    else
+      @title = "Sign up"
+      render 'new'
+    end
+  end
+  
 end
