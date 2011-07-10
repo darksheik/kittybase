@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.5'
 gem 'paperclip'
 gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'will_paginate', '3.0.pre2'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -33,6 +35,8 @@ gem 'rake', '~> 0.8.7'
    gem 'webrat'
    gem 'rspec-rails'
    gem 'annotate-models','1.0.4' 
+   gem 'faker', '0.3.1'
+
  end
 
 group :test do
