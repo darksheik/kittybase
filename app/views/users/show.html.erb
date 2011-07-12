@@ -2,3 +2,11 @@
 <%= gravatar_for @user %>
 <%= @user.name %>
 </h1>
+
+<% unless @user.kitties.empty? %>
+This user has <%= @user.kitties.size %> kitties!
+       <table class="kitties" summary="Kitties that this user has">
+          <%= render @kitties %>
+        </table>
+
+      <% end %>
