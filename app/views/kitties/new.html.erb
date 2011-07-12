@@ -1,0 +1,27 @@
+<h1>Add a new kitty!</h1>
+<%= form_for(@kitty) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+
+<div class="field">
+<%= f.label :name %><br />
+<%= f.text_field :name %>
+</div>
+<div class="field">
+<%= f.label :dob %><br />
+<%= f.text_field :dob %>
+</div>
+<div class="field">
+<%= f.label :breed %><br />
+<%= f.text_field :breed %>
+</div>
+<div class="field">
+<%= f.label :likes %><br />
+<%= f.text_field :likes %>
+</div>
+<div class="actions">
+<%= f.submit "Add kitty!" %>
+</div>
+<% end %>
+
+</div>
+

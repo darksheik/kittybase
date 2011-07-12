@@ -5,6 +5,7 @@ Kittybase::Application.routes.draw do
 
   get "pages/home"
   resources :users
+  resources :kitties
   resources :sessions, :only => [:new, :create, :destroy]
 
   
