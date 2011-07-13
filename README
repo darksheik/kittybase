@@ -1,3 +1,5 @@
 Kittybase is my first project to get my hands dirty with Rails and try to fly a little solo.
 
 It is intended to be a database to manage your cats and share pictures of them with the world.
+
+NOTE: Uploading pictures requires the paperclip gem, and as such ImageMagick must be installed on your system.  If it is then not on the command path, you will need to add it to your config/environments file(s).

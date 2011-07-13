@@ -1,3 +1,14 @@
-<h1>
+<p><h1>
 <%= @kitty.name %>
-</h1>(belongs to <%= link_to @kitty.user.name, user_path(:id => @kitty.user.id) %>)
+</h1>(belongs to <%= link_to @kitty.user.name, user_path(:id => @kitty.user.id) %>)</p>
+
+<% if @kitty.pictures.any? %>
+<h3>Pictures of <%= @kitty.name %></h3>
+       <table class="pictures" summary="Pictures of this kitty">
+          <%= render @pictures %>
+        </table>
+<% else %>
+<h3>This Kitty has no pictures yet!</h3>
+<% end %>
+
+<%= link_to "Add pictures!", '/pictures/new?kitty_id=' + @kitty.id.to_s %>

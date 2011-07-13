@@ -22,5 +22,6 @@ class KittiesController < ApplicationController
   
   def show
     @kitty = Kitty.find(params[:id])
+    @pictures = @kitty.pictures
   end
 end

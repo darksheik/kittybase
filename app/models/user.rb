@@ -45,9 +45,9 @@ class User < ActiveRecord::Base
   end
   
   def self.authenticate_with_salt(id, cookie_salt)
-user = find_by_id(id)
-(user && user.salt == cookie_salt) ? user : nil
-end
+    user = find_by_id(id)
+    (user && user.salt == cookie_salt) ? user : nil
+  end
 
   private
   
@@ -57,14 +57,14 @@ end
   end
   def encrypt(string)
     secure_hash("#{salt}--#{string}")
-                   end
-                  def make_salt
-                  secure_hash("#{Time.now.utc}--#{password}")
-                  end
-                  def secure_hash(string)
-                  Digest::SHA2.hexdigest(string)
-                  end
+  end
+  def make_salt
+    secure_hash("#{Time.now.utc}--#{password}")
+  end
+  def secure_hash(string)
+    Digest::SHA2.hexdigest(string)
+  end
                   
                   
-                  end
+end
                   
