@@ -22,4 +22,9 @@ describe Picture do
               :avatar_updated_at => Date.new
             }
   end
+  
+  it "should create a new instance given valid attributes" do
+    puts @attr[:name] + " " + @attr[:user_id].to_s
+    Kitty.create!(@attr)
+  end
 end
