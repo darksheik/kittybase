@@ -10,12 +10,14 @@ padding-top: 20px;
 header img {
 background: #fff;
 }
+
 section {
 margin-top: 1em;
 font-size: 120%;
 padding: 20px;
 
 }
+
 section h1 {
   padding-left: 1em;
 font-size: 200%;
@@ -52,11 +54,11 @@ nav ul li a:hover {
 }
 /* Links */
 a {
-color: #09c;
+color: white;
 text-decoration: none;
 }
 a:hover {
-color: #069;
+color: white;
 text-decoration: underline;
 }
 

@@ -1,4 +1,10 @@
 Kittybase::Application.routes.draw do
+  get "pictures/show"
+
+  get "pictures/destroy"
+
+  get "pictures/new"
+
   get "sessions/new"
 
   get "users/new"

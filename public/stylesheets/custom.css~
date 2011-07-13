@@ -10,11 +10,15 @@ padding-top: 20px;
 header img {
 background: #fff;
 }
+
 section {
 margin-top: 1em;
 font-size: 120%;
 padding: 20px;
 
+}
+td kitty a {
+  color: red;
 }
 section h1 {
   padding-left: 1em;
@@ -52,11 +56,11 @@ nav ul li a:hover {
 }
 /* Links */
 a {
-color: #09c;
+color: white;
 text-decoration: none;
 }
 a:hover {
-color: #069;
+color: white;
 text-decoration: underline;
 }
 
@@ -105,3 +109,4 @@ margin-top: 1em;
 .users li {
 list-style: none;
 }
+

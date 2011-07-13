@@ -1,6 +1,7 @@
 class KittiesController < ApplicationController
   
-    def new
+  def new
+    @user = current_user
     @kitty = Kitty.new
     @title = "Add a new kitty!"
   end
@@ -9,7 +10,7 @@ class KittiesController < ApplicationController
     @user = current_user
     @kitty = Kitty.new(params[:kitty])
     if @kitty.save      
-      flash[:success] = "Welcome to KittyBase!  Your account has been created successfully.  Now add a kitty!"
+      flash[:success] = "Kitty created successfully!"
       
       redirect_to @kitty
     else
@@ -17,5 +18,9 @@ class KittiesController < ApplicationController
       render 'new'
       
     end
+  end
+  
+  def show
+    @kitty = Kitty.find(params[:id])
   end
 end

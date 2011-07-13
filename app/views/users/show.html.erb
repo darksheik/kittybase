@@ -3,10 +3,13 @@
 <%= @user.name %>
 </h1>
 
-<% unless @user.kitties.empty? %>
-This user has <%= @user.kitties.size %> kitties!
+<% if @user.kitties.any? %>
+<h3>This user has <%= @user.kitties.size %> kitties!</h3>
        <table class="kitties" summary="Kitties that this user has">
           <%= render @kitties %>
         </table>
-
+<% else %>
+<h3>This user has no kitties.  Tell them to add some!</h3>
       <% end %>
+
+<%= link_to "Add a new Kitty", new_kitty_path if @user == current_user  %>
