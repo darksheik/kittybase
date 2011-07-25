@@ -34,7 +34,8 @@ gem 'rake', '~> 0.8.7'
  group :development, :test do
    gem 'webrat'
    gem 'rspec-rails'
-   gem 'annotate-models','1.0.4' 
+   #gem 'annotate-models'
+gem 'annotate', '2.4.0'
    gem 'faker', '0.3.1'
 
  end
