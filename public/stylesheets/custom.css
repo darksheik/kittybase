@@ -62,6 +62,11 @@ color: white;
 text-decoration: underline;
 }
 
+.featured {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
 div.field, div.actions {
 margin-bottom: 10px;
 }

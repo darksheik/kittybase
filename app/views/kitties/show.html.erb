@@ -1,9 +1,17 @@
-<p><h1>
-<%= @kitty.name %>
-</h1>(belongs to <%= link_to @kitty.user.name, user_path(:id => @kitty.user.id) %>)</p>
 
+<font class=featured><%= @kitty.name %></font>
+&nbsp;&nbsp;(belongs to <%= link_to @kitty.user.name, user_path(:id => @kitty.user.id) %>)
+<TABLE><TR><TD>
+Age: <%= distance_of_time_in_words(@kitty.dob,Time.now) %>
+</TD><TD>
+Breed: <%= @kitty.breed %>
+</TD><TD>
+Likes: <%= @kitty.likes %>
+</TD>
+</TR></TABLE>
+<BR>
 <% if @kitty.pictures.any? %>
-<h3>Pictures of <%= @kitty.name %></h3>
+<h5>Pictures of <%= @kitty.name %></h5>
        <table class="pictures" summary="Pictures of this kitty">
           <%= render @pictures %>
         </table>
