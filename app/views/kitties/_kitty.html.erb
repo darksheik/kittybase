@@ -1,6 +1,9 @@
-<tr>
 <td class="kitty">
-<h3> <B><%= link_to kitty.name, kitty_path(:id => kitty.id) %></B></h3>
+<% if kitty.pictures.any? %>
+  <%= image_tag(kitty.pictures.profile_pic[0].avatar.url(:thumb)) %>
+<% else %>
+  <%= image_tag('/images/no_kitty.gif') %>
+<% end %><BR>
+<B><%= link_to kitty.name, kitty_path(:id => kitty.id) %></B>
 
 </td>
-</tr>
