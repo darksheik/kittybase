@@ -2,5 +2,12 @@
 <br><br>
 <%= image_tag @picture.avatar.url(:medium) %><BR>
 <h5><%= @picture.caption %></h5>
-<BR><BR>
+<% if @user == current_user %>
+<% if @picture.is_profile_pic == true %>
+This is your profile picture!<BR>
+<% else %>
+<%= link_to "Make Profile Picture", make_profile_pic_picture_path %>
+<% end %>
+<% end %>
+<BR>
 <%= link_to "Back to Kitty", @picture.kitty %>

@@ -1,8 +1,10 @@
 <%= form_for(@picture, :html => { :multipart => true }) do |f| %>
   <div class="field">
+Enter a caption for your kitty!<BR>
         <%= f.text_field :caption %>
   </div>
   <div class="field">
+Browse to where the file is:<BR>
         <%= f.file_field :avatar %>
   </div>
 <%= f.hidden_field :kitty_id, { :value => params[:kitty_id] } %>

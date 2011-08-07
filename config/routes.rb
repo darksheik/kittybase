@@ -12,7 +12,12 @@ Kittybase::Application.routes.draw do
   get "pages/home"
   resources :users
   resources :kitties
-  resources :pictures
+  resources :pictures do
+   member do
+     get 'make_profile_pic'
+   end
+  end
+    
   resources :sessions, :only => [:new, :create, :destroy]
 
   
