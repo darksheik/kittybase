@@ -2,7 +2,7 @@
 <br><br>
 <%= image_tag @picture.avatar.url(:medium) %><BR>
 <h5><%= @picture.caption %></h5>
-<% if @user == current_user %>
+<% if @picture.kitty.user == current_user %>
 <% if @picture.is_profile_pic == true %>
 This is your profile picture!<BR>
 <% else %>
