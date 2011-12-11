@@ -10,8 +10,15 @@ Kittybase::Application.routes.draw do
   get "users/new"
 
   get "pages/home"
+  
+  #get "kitties/:id/carouselitems"
+  
   resources :users
-  resources :kitties
+  resources :kitties do
+    member do
+      get 'carouselitems'
+    end
+  end
   resources :pictures do
    member do
      get 'make_profile_pic'

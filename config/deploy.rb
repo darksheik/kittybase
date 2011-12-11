@@ -74,12 +74,12 @@ namespace :deploy do
   end
   
   task :start, :roles => :app do
-    run "source /etc/profile; source ~/.bash_profile; cd #{current_path}; passenger start -p PORT_I_CHOOSE -d -e #{rails_env}"
+    run "source /etc/profile; source ~/.bash_profile; cd #{current_path}; passenger start -p 9001 -d -e #{rails_env}"
     #run "touch #{current_release}/tmp/restart.txt"
   end
 
   task :stop, :roles => :app do
-    run "source /etc/profile; source ~/.bash_profile; cd #{current_path}; passenger stop -p PORT_I_CHOOSE;"
+    run "source /etc/profile; source ~/.bash_profile; cd #{current_path}; passenger stop -p 9001;"
   end
 
   task :restart, :roles => :app do

@@ -24,4 +24,10 @@ class KittiesController < ApplicationController
     @kitty = Kitty.find(params[:id])
     @pictures = @kitty.pictures
   end
+  
+  def carouselitems
+    @kitty = Kitty.find(params[:id])
+    @pictures = @kitty.pictures
+    render 'carouselitems', :layout => false 
+  end
 end

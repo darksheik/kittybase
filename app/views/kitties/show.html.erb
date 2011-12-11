@@ -1,3 +1,6 @@
+  <%= javascript_include_tag 'jcarousel/lib/jquery.jcarousel.min','carousel_init' %>
+
+    <%= stylesheet_link_tag 'skins/tango/skin.css', :media => 'screen' %>
 
 <font class=featured><%= @kitty.name %></font>
 &nbsp;&nbsp;(belongs to <%= link_to @kitty.user.name, user_path(:id => @kitty.user.id) %>)
@@ -12,11 +15,14 @@ Likes: <%= @kitty.likes %>
 <BR>
 <% if @kitty.pictures.any? %>
 <h5>Pictures of <%= @kitty.name %></h5>
-       <table class="pictures" summary="Pictures of this kitty">
-          <%= render @pictures %>
+  <div id="mycarousel" class="jcarousel-skin-tango">
+    <ul>
+      <!-- The content will be dynamically loaded in here -->
+    </ul>
+  </div>
         </table>
 <% else %>
 <h3>This Kitty has no pictures yet!</h3>
 <% end %>
-
+<input type=hidden id=kittynumber value=<%= @kitty.id %>>
 <%= link_to "Add pictures!", '/pictures/new?kitty_id=' + @kitty.id.to_s %>
