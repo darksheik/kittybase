@@ -20,8 +20,7 @@ after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems", :roles => [:web, :db, :app] do
   run "chmod 755 #{release_path}/public -R" 
 end
-after "deploy:bundle_gems", "deploy:precompile"
-after "deploy:precompile", "deploy:dbmigrate"
+after "deploy:bundle_gems", "deploy:dbmigrate"
 after "deploy:dbmigrate", "deploy:copyht"
 after "deploy:copyht", "deploy:restart"
 
@@ -37,9 +36,6 @@ after "deploy:copyht", "deploy:restart"
    task :dbmigrate do
      run "cd #{deploy_to}/current && rake db:migrate RAILS_ENV=#{rails_env}"
    end
-  task :precompile, :roles => :app do
-    run "cd #{release_path} && rake RAILS_ENV=#{rails_env} assets:precompile"
-  end
 
    task :start do ; end
    task :stop do ; end
