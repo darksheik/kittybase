@@ -1,14 +1,10 @@
 <font class="featured">Pictures of <%= @picture.kitty.name %></font>
 <br><br>
-<TABLE><TR><TD VALIGN=TOP>
-<%= link_to("<< Previous", @picture.previous_pic) if @picture.previous_pic %>
-</TD>
+<TABLE><TR>
 <TD>
 <%= image_tag @picture.avatar.url(:medium) %>
 </TD>
-<TD>
-<%= link_to("Next >>", @picture.next_pic) if @picture.next_pic %>
-</TD></TR></TABLE>
+</TR></TABLE>
 <BR>
 <h5><%= @picture.caption %></h5>
 <% if @picture.kitty.user == current_user %>
