@@ -46,3 +46,7 @@ group :test do
   gem 'faker', '0.3.1'
 end
 
+group :production do
+  gem 'mysql2'
+end
+
