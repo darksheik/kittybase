@@ -20,7 +20,8 @@ after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems", :roles => [:web, :db, :app] do
   run "chmod 755 #{release_path}/public -R" 
 end
-after "deploy:bundle_gems", "deploy:dbmigrate"
+after "deploy:bundle_gems", "deploy:symlink_configs"
+after "deploy:symlink_configs", "deploy:dbmigrate"
 after "deploy:dbmigrate", "deploy:copyht"
 after "deploy:copyht", "deploy:restart"
 
@@ -33,6 +34,11 @@ after "deploy:copyht", "deploy:restart"
    task :copyht do
      run "cd /home/donpflas/ && cp htac-passenger-kb public_html/kittybase/.htaccess"
    end
+   task :symlink_configs, :roles => :app, :except => {:no_symlink => true} do
+    run <<-CMD
+      cd #{release_path} && ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml
+    CMD
+  end
    task :dbmigrate do
      run "cd #{deploy_to}/current && rake db:migrate RAILS_ENV=#{rails_env}"
    end
