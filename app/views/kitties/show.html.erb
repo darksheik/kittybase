@@ -25,4 +25,6 @@ Likes: <%= @kitty.likes %>
 <h3>This Kitty has no pictures yet!</h3>
 <% end %>
 <input type=hidden id=kittynumber value=<%= @kitty.id %>>
+<% if @kitty.user == current_user %>
 <%= link_to "Add pictures!", '/pictures/new?kitty_id=' + @kitty.id.to_s %>
+<% end %>
