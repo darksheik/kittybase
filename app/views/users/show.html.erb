@@ -4,7 +4,7 @@
 </h1>
 
 <% if @user.kitties.any? %>
-<h3>This user has <%= @user.kitties.size %> kitties!</h3>
+  <h3>This user has <%= pluralize(@user.kitties.size,"kitty") %>!</h3>
        <table class="kitties" summary="Kitties that this user has"><tr>
           <%= render @kitties %>
         </tr></table>
