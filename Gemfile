@@ -39,12 +39,10 @@ gem 'capistrano'
    gem 'rspec-rails'
    #gem 'annotate-models'
 gem 'annotate', '2.4.0'
-   gem 'faker'
 
  end
 
 group :test do
   gem 'factory_girl_rails','1.0'
-  gem 'faker'
 end
 
