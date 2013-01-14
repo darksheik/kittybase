@@ -38,7 +38,6 @@ gem 'capistrano'
    gem 'webrat'
    gem 'rspec-rails'
    #gem 'annotate-models'
-gem 'annotate', '2.4.0'
 
  end
 
