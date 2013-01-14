@@ -18,7 +18,7 @@ set :use_sudo, false
 after "deploy", "deploy:bundle_gems"
 #after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems", :roles => [:web, :db, :app] do
-  run "chmod 755 #{release_path}/public -R" 
+  run "chmod 755 #{release_path}/public -R"
 end
 after "deploy:bundle_gems", "deploy:symlink_configs"
 after "deploy:symlink_configs", "deploy:dbmigrate"
@@ -29,7 +29,7 @@ after "deploy:copyht", "deploy:restart"
 # If you are using Passenger mod_rails uncomment this:
  namespace :deploy do
    task :bundle_gems do
-     run "cd #{deploy_to}/current && bundle install vendor/gems"
+     run "cd #{deploy_to}/current && bundle install"
    end
    task :copyht do
      run "cd /home/donpflas/ && cp htac-passenger-kb public_html/kittybase/.htaccess"
