@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.19'
+gem 'rails', '~> 3.0.19'
 gem 'paperclip'
 gem 'gravatar_image_tag'
 gem 'will_paginate', '3.0.4'
