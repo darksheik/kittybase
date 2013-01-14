@@ -29,7 +29,7 @@ after "deploy:copyht", "deploy:restart"
 # If you are using Passenger mod_rails uncomment this:
  namespace :deploy do
    task :bundle_gems do
-     run "cd #{deploy_to}/current && bundle install"
+     run "cd #{deploy_to}/current && bundle install vendor/gems"
    end
    task :copyht do
      run "cd /home/donpflas/ && cp htac-passenger-kb public_html/kittybase/.htaccess"
