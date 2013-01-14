@@ -12,6 +12,7 @@ gem 'jquery-rails','>=1.0.12'
 
 gem 'sqlite3'
 gem 'pg'
+gem 'mysql2'
 gem 'rake', '~> 0.8.7'
 
 # Use unicorn as the web server
@@ -38,12 +39,12 @@ gem 'capistrano'
    gem 'rspec-rails'
    #gem 'annotate-models'
 gem 'annotate', '2.4.0'
-   gem 'faker', '0.3.1'
+   gem 'faker'
 
  end
 
 group :test do
   gem 'factory_girl_rails','1.0'
-  gem 'faker', '0.3.1'
+  gem 'faker'
 end
 
