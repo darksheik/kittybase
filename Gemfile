@@ -11,7 +11,8 @@ gem 'jquery-rails','>=1.0.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'ruby-mysql'
+#gem 'ruby-mysql'
+gem 'pg'
 gem 'rake', '~> 0.8.7'
 
 # Use unicorn as the web server

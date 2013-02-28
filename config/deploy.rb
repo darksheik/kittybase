@@ -1,5 +1,6 @@
 set :application, "kittybase"
 set :repository,  "git@github.com:darksheik/kittybase.git"
+set :branch, "pre_rails_upgrade"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
