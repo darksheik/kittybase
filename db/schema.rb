@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20110805020256) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "is_profile_pic"
   end
 
   create_table "pictures", :force => true do |t|
